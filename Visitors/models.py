@@ -10,21 +10,21 @@ from visitor_management import settings
 
 
 # Create your models here.
-class BasicInfo(models.Model):
+class BasicInfo(models.Model):                      # CREATING TEMPLATE OF OUR MODELS
     name=models.CharField(max_length=30,blank=False)
     phone=models.CharField(max_length=20,blank=False)
     email=models.CharField(max_length=40)
     class Meta:
-        abstract=True
+        abstract=True                             # WILL NOT BE CREATED AS A SEPARATE MODEL 
 
 
     def str(self):
         return 'Name:{0} Phone:{1}'.format(self.name,self.phone)
 
-class Visitors(BasicInfo):
+class Visitors(BasicInfo):             # MODEL VISITORS INHERITS TEMPLATE FROM BASICINFO
     pass
-    checkin=models.DateTimeField(default=datetime.now,blank=False)
+    checkin=models.DateTimeField(default=datetime.now,blank=False)  #ADDED CHECKIN CHECKOUT FIELDS 
     checkout=models.DateTimeField(blank=True, null=True)
 
-class Host(BasicInfo):
+class Host(BasicInfo):              # MODEL HOST INHERITS TEMPLATE FROM BASICINFO
     pass
