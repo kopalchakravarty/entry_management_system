@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Visitors',
-    'django_twilio',
+    'Visitors', #add sub-app Visitors
+    'django_twilio', # add twilio app 
 ]
 
 MIDDLEWARE = [
@@ -121,12 +121,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_HOST = 'ENTER EMAIL SERVICE HOST' #eg: 'smtp.gmail.com'
+EMAIL_PORT = ENTER EMAIL SERVICE PORT #eg: 587
 EMAIL_USER = 'EMAIL ID OF SITE MANAGER'
 EMAIL_PASSWORD = 'PASSWORD OF SITE MANAGER'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # Added for testing purpose only. Displays email sent on console
 TWILIO_ACCOUNT_SID= 'YOUR TWILIO SID'
 TWILIO_AUTH_TOKEN = 'YOUR TWILIO AUTH_TOKEN'
-HOST_NAME='HOST NAME '
-HOST_ADDRESS='HOST ADDRESS'
+HOST_NAME='HOST NAME ' # Name of the host
+HOST_ADDRESS='HOST ADDRESS' # Address of the host/company
