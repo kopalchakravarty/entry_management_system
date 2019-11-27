@@ -91,19 +91,19 @@ def edit_host(request,pk):
 
 def sendmailtohost(instance):
       subject="New Visitor"
-      to='CEO@gmail.com'
+      to='CEO@gmail.com' #EMAIL ID OF HOST
       message='\n Name: '+instance.name+'\n Email: '+instance.email+'\n Phone: '+instance.phone+'\n Checkin: '+str(instance.checkin)
-      send_mail(subject,message,settings.EMAIL_HOST_USER,[to,])
+      send_mail(subject,message,settings.EMAIL_USER,[to,])
 
 def sendmailtovisitor(instance):
     subject="Visit Details"
     message='\n Name: '+instance.name+'\n Email: '+instance.email+'\n Phone: '+instance.phone+'\n'+' Checkin: '+ str(instance.checkin)+'\n Checkout: '+ str(instance.checkout)+'\n Host name: '+ settings.HOST_NAME+'\n Address: '+settings.HOST_ADDRESS
-    send_mail(subject,message,settings.EMAIL_HOST_USER,[instance.email,])
+    send_mail(subject,message,settings.EMAIL_USER,[instance.email,])
 
 def sendsmstohost(instance):
     r=twilio_client.messages.create(
-    to='+919826680561',
-    from_='+1 323 815 7836',
+    to='+919826680561', #HOST'S PHONE NUMBER
+    from_='+1 323 815 7836',# SITE MANAGER'S NUMBER 
     body='\n Name: '+instance.name+'\n Email: '+instance.email+'\n Phone: '+instance.phone+'\n Checkin: '+str(instance.checkin))
     if(r):
         print('success')
@@ -111,7 +111,7 @@ def sendsmstohost(instance):
 def sendsmstovisitor(instance):
     m=twilio_client.messages.create(
     to=instance.phone,
-    from_='+1 323 815 7836',
+    from_='+1 323 815 7836', #SITE MANAGER'S NUMBER
     body='\n Name: '+instance.name+'\n Email: '+instance.email+'\n Phone: '+instance.phone+'\n Checkin: '+str(instance.checkin)+'\n Checkout: '+ str(instance.checkout)+'\n Host name: '+ settings.HOST_NAME+'\n Address: '+settings.HOST_ADDRESS)
     if(m):
         print('success')
