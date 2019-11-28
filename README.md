@@ -53,7 +53,7 @@ An entry management application in Django, that keeps track of visitors and noti
  
  <img src='https://user-images.githubusercontent.com/31576619/69784894-ec1ca900-11dc-11ea-808d-5b677a76c969.png'/>
  
- Visitor enters his details using the '+' button upon checkin. If the supplied credentials are in a valid format, the entry is added into the database. \
+ Visitor enters his details using the **'+'** button upon checkin. If the supplied credentials are in a valid format, the entry is added into the database. \
  Server time is recorded as the checkin time of the visitor. 
  
  <img src='https://user-images.githubusercontent.com/31576619/69786445-774b6e00-11e0-11ea-949c-88230d2783c8.png'/>
@@ -62,7 +62,7 @@ An entry management application in Django, that keeps track of visitors and noti
  
  <img src='https://user-images.githubusercontent.com/31576619/69786810-225c2780-11e1-11ea-93cb-c91d3b7d8e8f.png' />
  
- Host enters his details by clicking on the '+' button 
+ Host enters his details by clicking on the **'+'** button 
  
  <img src='https://user-images.githubusercontent.com/31576619/69786994-8e3e9000-11e1-11ea-9a91-689b6c26a722.png'>
  
