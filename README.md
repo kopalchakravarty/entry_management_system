@@ -12,8 +12,10 @@ An entry management application in Django, that keeps track of visitors and noti
 * Python 3
 * Bootstrap 4
    #### Third Party Apps:
-   * Twilio- Communication APIs for SMS,Voice and Video Authentication :
-     https://www.twilio.com /
+   * Twilio- Communication APIs for SMS,Voice and Video Authentication : 
+   
+     https://www.twilio.com 
+     
      https://www.twilio.com/docs/libraries/python
 
 
