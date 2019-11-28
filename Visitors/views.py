@@ -85,8 +85,7 @@ def edit_item(request, pk, model, cls): #GENERALIZED METHOD INHERITED BY EDIT_VI
         return render(request, 'edit_item.html', {'form': form})
 def edit_visitor(request, pk): # PK IS THE AUTO GENERATED PRIMARY KEY BY THE DJANGO FRAMEWORK PASSED AS ARGUMENT TO GET THE PARTICULAR OBJECT TO BE EDITED
     return edit_item(request, pk, Visitors, VisitorForm)
-def edit_host(request,pk):     #PK IS THE AUTO GENERATED PRIMARY KEY BY THE DJANGO FRAMEWORK PASSED AS ARGUMENT TO GET THE PARTICULAR OBJECT TO BE EDITED
-    return edit_item(request,pk,Host,HostForm) 
+
 
 def sendmailtohost(instance): # EMAIL FUNCTION TO SEND EMAIL TO HOST UPON HAVING A NEW VISITOR
       subject="New Visitor"
