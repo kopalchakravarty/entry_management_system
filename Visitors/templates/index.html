@@ -30,7 +30,7 @@
     </thead>
 
     <tbody>
-      {% for item in items %} 
+      {% for item in items %}
       <tr>
        <td>{{ item.pk }}
        <td>{{ item.name }}</td>
@@ -40,7 +40,7 @@
        <td>{{ item.checkout}}</td>
        {% if header|lower == "visitor" %}
        <td>
-         <a href="{% url 'edit_visitor' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Edit</a> <!-- PASS ID(AUTO-GEN PRIMARY KEY) OF INSTANCE TO BE EDITED -->
+         <a href="#" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Edit</a> <!-- PASS ID(AUTO-GEN PRIMARY KEY) OF INSTANCE TO BE EDITED -->
        </td>
 
        {% else %}
@@ -48,7 +48,7 @@
          <a href="#" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Edit</a>
        </td>
        {%endif%}
-       
+
        </tr>
 
       {% endfor %}

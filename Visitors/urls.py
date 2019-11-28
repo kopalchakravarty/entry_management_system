@@ -8,8 +8,8 @@ urlpatterns = [
     url(r'^display_host$',display_host,name="display_host"),
     url(r'^add_visitor$',add_visitor,name="add_visitor"),
     url(r'^add_host$',add_host,name="add_host"),
-    url(r'^edit_visitor/(?P<pk>\d+)$',edit_visitor,name="edit_visitor"),
-   
     
+
+
 
     ]

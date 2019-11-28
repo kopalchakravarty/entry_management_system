@@ -39,8 +39,8 @@ def display_host(request): #FUNCTION TO DISPLAY HOSTS
 
 def add_visitor(request): # FUNCTION TO ADD A NEW VISITOR
 
-    if request.method=='POST': 
-        form=VisitorForm(request.POST) 
+    if request.method=='POST':
+        form=VisitorForm(request.POST)
         if form.is_valid():
             instance=form.save()     # SAVE DATA IF VALID
             sendmailtohost(instance) # PASS VALUE OF CURRENTLY CREATED VISITOR TO EMAIL FUNCTION
@@ -57,7 +57,7 @@ def add_visitor(request): # FUNCTION TO ADD A NEW VISITOR
         return render(request,'add_new.html',{'form':form})  # RETURNS HTTP RESPONSE OBJECT WITH THE TEMPLATE SPECIFIED IN ADD_NEW.HTML AND TAKES IN FORM AS CONTEXT
 
 def add_host(request): # FUNCTION TO ADD HOST
-    if request.method=='POST': 
+    if request.method=='POST':
         form=HostForm(request.POST)
         if form.is_valid():
             instance=form.save() # SAVE DATA IF VALID
@@ -94,17 +94,17 @@ def sendmailtohost(instance): # EMAIL FUNCTION TO SEND EMAIL TO HOST UPON HAVING
       send_mail(subject,message,settings.EMAIL_USER,[to,]) # IMPORTS EMAIL OF SITE MANAGER IN THE 'FROM' FIELD
 
 def sendmailtovisitor(instance): # EMAIL FUNCTION TO SEND EMAIL TO VISITOR AFTER HIS EXIT
-    subject="Visit Details" 
+    subject="Visit Details"
     message='\n Name: '+instance.name+'\n Email: '+instance.email+'\n Phone: '+instance.phone+'\n'+' Checkin: '+ str(instance.checkin)+'\n Checkout: '+ str(instance.checkout)+'\n Host name: '+ settings.HOST_NAME+'\n Address: '+settings.HOST_ADDRESS # HOST NAME AND ADDRESS IS HARDCODED IN THE SETTINGS.PY FILE
     send_mail(subject,message,settings.EMAIL_USER,[instance.email,]) # IMPORTS EMAIL OF SITE MANAGER IN THE 'FROM' FIELD
 
 def sendsmstohost(instance): # SEND SMS TO HOST WHEN A NEW VISITOR ENTERS
     r=twilio_client.messages.create(
     to='HOST_PHONE_NUMBER', # HOST'S PHONE NUMBER
-    from_='SITE_MANAGER_NUMBER',# SITE MANAGER'S NUMBER 
+    from_='SITE_MANAGER_NUMBER',# SITE MANAGER'S NUMBER
     body='\n Name: '+instance.name+'\n Email: '+instance.email+'\n Phone: '+instance.phone+'\n Checkin: '+str(instance.checkin))
     if(r):
-        print('success') # PRINT SUCCESS IN CONSOLE UPON SUCCESSFUL DELIVERY OF THE MESSAGE 
+        print('success') # PRINT SUCCESS IN CONSOLE UPON SUCCESSFUL DELIVERY OF THE MESSAGE
 
 def sendsmstovisitor(instance):
     m=twilio_client.messages.create(
