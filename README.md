@@ -49,6 +49,10 @@ An entry management application in Django, that keeps track of visitors and noti
  ## How the Application Works:
  
  * The site manager handles the flow of information. All necessary details must be specified in the **settings.py** file.
+ 
+ <img src='https://user-images.githubusercontent.com/31576619/69914493-32873780-146b-11ea-899d-8625ac537d4c.png'/>
+ 
+ 
  * Twilio account should be set up before use. 
  
  <img src='https://user-images.githubusercontent.com/31576619/69784894-ec1ca900-11dc-11ea-808d-5b677a76c969.png'/>
